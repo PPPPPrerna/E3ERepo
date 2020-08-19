@@ -53,6 +53,7 @@ public class Listners extends Base implements ITestListener{
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				System.out.println("Wrong");
+				System.out.println("Wrong");
 			}
 			
 		
