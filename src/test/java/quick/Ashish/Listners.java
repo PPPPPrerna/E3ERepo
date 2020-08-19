@@ -54,6 +54,8 @@ public class Listners extends Base implements ITestListener{
 				// TODO Auto-generated catch block
 				System.out.println("Wrong");
 				System.out.println("Wrong");
+				System.out.println("Right");
+				System.out.println("Wrong");
 			}
 			
 		
