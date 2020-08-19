@@ -1,0 +1,8 @@
+2020-08-14 14:52:08,423 ERROR q.A.Ash [main] cool
+2020-08-14 14:52:08,439 INFO q.A.Ash [main] Yeah
+2020-08-14 15:19:11,172 ERROR b.AshTest [main] cool
+2020-08-14 15:19:11,193 INFO b.AshTest [main] Yes
+2020-08-14 15:19:11,193 DEBUG b.AshTest [main] Prerna
+2020-08-14 15:26:52,363 ERROR b.AshTest [main] cool
+2020-08-14 15:26:52,382 INFO b.AshTest [main] Yes
+2020-08-14 15:26:52,383 DEBUG b.AshTest [main] Prerna

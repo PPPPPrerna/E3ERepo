@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="36953" started-at="2020-08-19T11:15:37Z" finished-at="2020-08-19T11:16:14Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="36953" started-at="2020-08-19T11:15:37Z" finished-at="2020-08-19T11:16:14Z">
+      <class name="quick.Ashish.AshTest2">
+        <test-method status="PASS" signature="cool()[pri:0, instance:quick.Ashish.AshTest2@71a8adcf]" name="cool" is-config="true" duration-ms="28443" started-at="2020-08-19T16:45:37Z" finished-at="2020-08-19T16:46:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cool -->
+        <test-method status="PASS" signature="test(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:quick.Ashish.AshTest2@71a8adcf]" name="test" duration-ms="6360" started-at="2020-08-19T16:46:06Z" data-provider="getData" finished-at="2020-08-19T16:46:12Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Prerna]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[prerna@metlife.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[New framework]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test -->
+        <test-method status="PASS" signature="fgh()[pri:0, instance:quick.Ashish.AshTest2@71a8adcf]" name="fgh" is-config="true" duration-ms="1947" started-at="2020-08-19T16:46:12Z" finished-at="2020-08-19T16:46:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fgh -->
+      </class> <!-- quick.Ashish.AshTest2 -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
