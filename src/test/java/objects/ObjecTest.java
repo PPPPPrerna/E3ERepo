@@ -1,56 +1,78 @@
 package objects;
 
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class ObjecTest {
-
-	WebDriver driver;
 	
-	public ObjecTest(WebDriver driver){
-		
-		this.driver=driver;
+	WebDriver driver = null;
+	
+	public ObjecTest(WebDriver driver) {
+		// TODO Auto-generated constructor stub
+		this.driver = driver;
 	}
+
+	
+	private By nam=By.xpath("//input[@name='name']");
+	
+	private By enam=By.xpath("//input[@name='email']");
+	
+	private By mes=By.xpath("//textarea[@type='text']");
+	
+	private By submit = By.xpath("//input[@type='submit']");
+	
+	private By okay = By.xpath("//button[text()='OK']");
+
+	//public ObjecTest(WebDriver driver){
+		
+		//
+		
+	//}
 	
 	
 	
+
 	public WebElement name() {
-		WebElement elm=driver.findElement(By.xpath("//input[@name='name']"));
 		
+		return driver.findElement(nam);
 		
-		return elm;
 	}
 	
 	public WebElement email() {
-		WebElement as = driver.findElement(By.xpath("//input[@type='email']"));	
 		
-		return as;
+		return driver.findElement(enam);
 	}
 	
-	public WebElement text() {
-		WebElement zx =driver.findElement(By.xpath("//textarea[@type='text']"));
+	public WebElement message() {
+		return driver.findElement(mes);
 		
-		return zx;
+		
+		
 	}
 	
 	public WebElement submit() {
-		WebElement xc=driver.findElement(By.xpath("//input[@type='submit']"));
 		
-		return xc;
+		return driver.findElement(submit);
 	}
 	
 	public WebElement ok() {
 		
-		WebElement nm=driver.findElement(By.xpath("//*[text()='OK']"));
-		
-		return nm;
+		return driver.findElement(okay);
 	}
-	
-	public WebElement getData() {
-		WebElement web=driver.findElement(By.xpath("//p[@class='brand']/strong"));
+
+	public void screenshot() throws IOException {
 		
-		return web;
+		String path = System.getProperty("user.dir")+"\\screenshots +\\ss.png" ;
+		
+		File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		
+		FileUtils.copyFile(src,new File(path));
 	}
-	
 }

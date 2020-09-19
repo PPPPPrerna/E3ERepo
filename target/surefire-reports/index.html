@@ -102,7 +102,7 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="quick.Ashish.AshTest2" hash-for-method="test(Prerna, prerna@metlife.com, New framework)">test(Prerna, prerna@metlife.com, New framework)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="quick.Ashish.AshTest2" hash-for-method="starts(test, test@test.com, test)">starts(test, test@test.com, test)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -125,10 +125,10 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="test(Prerna, prerna@metlife.com, New framework)">
-                  </a> <!-- test(Prerna, prerna@metlife.com, New framework) -->
-                  <span class="method-name">test</span>
-                  <span class="parameters">(Prerna, prerna@metlife.com, New framework)</span>
+                  <a name="starts(test, test@test.com, test)">
+                  </a> <!-- starts(test, test@test.com, test) -->
+                  <span class="method-name">starts</span>
+                  <span class="parameters">(test, test@test.com, test)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -143,6 +143,9 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;Suite&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;quick.Ashish.Listners&quot;/&gt;
+  &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;quick.Ashish.AshTest2&quot;/&gt;
@@ -187,14 +190,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'test')
+data.setCell(0, 1, 'starts')
 data.setCell(0, 2, 'quick.Ashish.AshTest2')
-data.setCell(0, 3, 6360);
+data.setCell(0, 3, 5089);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 6 seconds</span>
+              <span class="suite-total-time">Total running time: 5 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -222,17 +225,13 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">quick.Ashish.AshTest2</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
-                <span class="method-name">cool</span>
+                <span class="method-name">initialization</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">test(Prerna, prerna@metlife.com, New framework)</span>
-                <span class="method-start">28632 ms</span>
+                <span class="method-name">starts(test, test@test.com, test)</span>
+                <span class="method-start">17046 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-test after">
-                <span class="method-name">fgh</span>
-                <span class="method-start">34999 ms</span>
-              </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

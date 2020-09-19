@@ -12,45 +12,43 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class Base {
 	
 	WebDriver driver;
 	
-	public Properties prop;
+	public WebDriver initialize() throws IOException {
 	
-	public  WebDriver initializeDriver() throws IOException {
-	
-	 prop=new Properties();
-	
-	FileInputStream fis=new FileInputStream("C:\\Users\\Dr Pramod Pandey\\eclipse-workspace\\Ashish\\resources\\data.properties");
+	FileInputStream fis = new FileInputStream("C:\\Users\\Dr Pramod Pandey\\eclipse-workspace\\Ashish\\resources\\data.properties");
 
+	
+	Properties prop = new Properties();
+	
 	prop.load(fis);
 	
-	String browserName =prop.getProperty("browser");
+	String browse = prop.getProperty("browser");
 	
-	if(browserName.equals("chrome")) {
+	if(browse.equals("chrome")) {
 		
-System.setProperty("webdriver.chrome.driver", "C:\\Users\\Dr Pramod Pandey\\Desktop\\Chrome driver\\chromedriver_win32\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Dr Pramod Pandey\\Desktop\\chrome85\\chromedriver.exe");
 		
-		 driver = new ChromeDriver();
+		DesiredCapabilities db = new DesiredCapabilities();
+		
+		db.acceptInsecureCerts();
+		ChromeOptions ch = new ChromeOptions();
+		
+		ch.merge(db);
+		
+		 driver = new ChromeDriver(ch);
+		 
 
-		
 	}
-	
-	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);//so dis will be applilied to entire test case.
 	
 	return driver;
-}
-	
-	public  void getScreenShotPath(WebDriver driver) throws IOException {
-		
-		TakesScreenshot ts=(TakesScreenshot) driver;
-		File source=ts.getScreenshotAs(OutputType.FILE);
-		
-		//String destinationFile = System.getProperty("C:\\Users\\Dr Pramod Pandey\\eclipse-workspace\\Ashish\\screenshots");
-		
-		FileUtils.copyFile(source,new File("C:\\Users\\Dr Pramod Pandey\\eclipse-workspace\\Ashish\\screenshots\\njk.png"));
-		
+
+
 	}
+
 }

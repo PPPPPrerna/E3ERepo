@@ -2,8 +2,7 @@ package quick.Ashish;
 
 
 
-import org.openqa.selenium.By;
-import objects.ObjecTest;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -13,7 +12,13 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.relevantcodes.extentreports.ExtentTest;
+
 import java.io.IOException;
+import objects.ObjecTest;
+
 
 import org.apache.logging.log4j.*;
 
@@ -23,96 +28,51 @@ import org.apache.logging.log4j.*;
 
 
 
-@Listeners(quick.Ashish.Listners.class)
 public class AshTest2 extends Base {
 	
-	
-	
-	//private static org.apache.logging.log4j.Logger log = LogManager.getLogger(AshTest2.class.getName());
-	
-	private static Logger log = LogManager.getLogger(AshTest2.class.getName());
+	WebDriver driver=null;
 	
 	@BeforeTest
-	public void cool() throws IOException {
+	public void initialization() throws IOException {
 		
-driver=initializeDriver();
+		this.driver=initialize();
+		driver.get("https://ashishkumarportfolio.netlify.app/");
 		
-		
-		driver.get(prop.getProperty("url"));
-		
-	
 		
 	}
 	
+	@Test(dataProvider="data")
 	
-	@Test(dataProvider="getData")
-	public void test(String username, String name, String text) throws IOException {
-		
-		//Base b = new Base();
-//driver=initializeDriver();
-		
-		
-		//driver.get(prop.getProperty("url"));
-
+	public void starts(String name , String email, String message) throws IOException {
 		
 		
 		
-	ObjecTest ob= new ObjecTest(driver);
-	
-		//String asx = ob.getData().getText();
-//ob.email().sendKeys(name);
 		
-		//ob.text().sendKeys(text);
+		ObjecTest ob = new ObjecTest(driver);
 		
-		
-	
-		ob.name().sendKeys(username);
-		
-		
-		
-		log.error("cool");
-		log.info("Prerna");
-		log.debug("qqqqqqqqqqqqqqqqqqqqqqqqqqq");
-	
-
-				
-		ob.email().sendKeys(name);
-		
-		ob.text().sendKeys(text);
-		
-		
+		ob.name().sendKeys(name);
+		ob.email().sendKeys(email);
+		ob.message().sendKeys(message);
 		ob.submit().click();
-		
 		ob.ok().click();
+		ob.screenshot();
 		
-		//driver.findElement(By.xpath("//*[text()='OK']"));
-		
-}
+	}
+	
 	@DataProvider
-	public Object[][] getData() {
+	public Object[][] data() {
 		
-		Object a[][]=new Object[1][3];
-		
-		a[0][0]="Prerna";
-		a[0][1]="prerna@metlife.com";
-		a[0][2]="New framework";
-		
-		
-		return a;
-		
-		
-		
-		
-		
-		
-		
-		
-	}
-	@AfterTest
-	public void fgh() {
-		driver.close();
+		return new Object[][] {
+			
+			{"test" , "test@test.com" , "test"}
+		};
 	}
 	
 	
 	
 }
+	
+	
+
+	
+

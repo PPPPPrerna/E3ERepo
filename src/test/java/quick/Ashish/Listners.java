@@ -10,14 +10,31 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import quick.Ashish.ExtentReporterNG;
 
-public class Listners extends Base implements ITestListener{
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.relevantcodes.extentreports.ExtentReports;
+
+public class Listners  implements ITestListener{
 	
-	WebDriver driver=null;
-
+	
+	com.aventstack.extentreports.ExtentReports reports=ExtentReporterNG.ext();
+	
+	ExtentTest test;
+	
+	ThreadLocal<ExtentTest> exn = new ThreadLocal<ExtentTest>();
+	
+	
+	
+	
+	
+	
+	
 	@Override
 	public void onFinish(ITestContext arg0) {
 		// TODO Auto-generated method stub
+		
 		
 	}
 
@@ -25,11 +42,16 @@ public class Listners extends Base implements ITestListener{
 	public void onStart(ITestContext arg0) {
 		// TODO Auto-generated method stub
 		
+		
+		
+		
 	}
 
 	@Override
 	public void onTestFailedButWithinSuccessPercentage(ITestResult arg0) {
 		// TODO Auto-generated method stub
+		
+		
 		
 	}
 
@@ -37,26 +59,11 @@ public class Listners extends Base implements ITestListener{
 	public void onTestFailure(ITestResult result) {
 		// TODO Auto-generated method stub
 		
-		
-		
-		//WebDriver driver=null;
-		//String testMethodName =result.getMethod().getMethodName();
-		
-		//ITestContext context = result.getTestContext();
-		//this.driver=(())result.getInstance().driver;
-		
-		this.driver=(WebDriver)result.getTestContext().getAttribute("WebDriver");
-		
 			
-			try {
-				getScreenShotPath(driver);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				System.out.println("Wrong");
-				System.out.println("Wrong");
-				System.out.println("Right");
-				System.out.println("Wrong");
-			}
+		
+		
+		
+		
 			
 		
 		
@@ -82,11 +89,33 @@ public class Listners extends Base implements ITestListener{
 	public void onTestStart(ITestResult arg0) {
 		// TODO Auto-generated method stub
 		
+		 test =reports.createTest(arg0.getMethod().getMethodName());
+		 
+		 exn.set(test);
+		 
+		
+		
+		
+		
+		
+		
+		 
+		
+		
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult arg0) {
 		// TODO Auto-generated method stub
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	}
 
